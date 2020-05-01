@@ -1,0 +1,16 @@
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+
+server:
+  port: 8049
+
+zuul:
+  sensitive-headers: Cookie,Set-Cookie
+  routes:
+    ocr:
+      service-id: OCRService
+    oauth:
+      service-id: OAuthServer
+      strip-prefix: false

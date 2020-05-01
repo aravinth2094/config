@@ -1,0 +1,22 @@
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+
+server:
+  port: 8090
+
+security:
+  oauth2:
+    client:
+      clientId: serviceclientid
+      clientSecret: serviceclientsecret
+    resource:
+      tokenInfoUri: http://localhost:8049/oauth/check_token
+      user-info-uri: http://localhost:8049/oauth/userinfo
+      id: ${spring.application.name}
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 15MB
